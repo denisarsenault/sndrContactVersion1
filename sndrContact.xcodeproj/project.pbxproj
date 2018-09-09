@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F7917332143FF2F009D6A4A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917312143FF2F009D6A4A /* Info.plist */; };
+		7F7917462143FF38009D6A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917372143FF38009D6A4A /* AppDelegate.m */; };
+		7F7917472143FF38009D6A4A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917382143FF38009D6A4A /* LaunchScreen.xib */; };
+		7F7917482143FF38009D6A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F79173A2143FF38009D6A4A /* Main.storyboard */; };
+		7F7917492143FF38009D6A4A /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F79173E2143FF38009D6A4A /* ContactViewController.m */; };
+		7F79174A2143FF38009D6A4A /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917402143FF38009D6A4A /* ContactDetailViewController.m */; };
+		7F79174B2143FF38009D6A4A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917412143FF38009D6A4A /* Images.xcassets */; };
+		7F79174C2143FF38009D6A4A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917422143FF38009D6A4A /* Info.plist */; };
+		7F79174D2143FF38009D6A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917432143FF38009D6A4A /* main.m */; };
+		7F8634CB214420FD00F01153 /* sndrContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CA214420FD00F01153 /* sndrContactTests.m */; };
+		7F8634CE214424E000F01153 /* sndrContact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CC214424E000F01153 /* sndrContact.xcdatamodeld */; };
+		7F8634D02144321D00F01153 /* empty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CF2144321D00F01153 /* empty.cpp */; };
+		BDE5016E049437FE71624B49 /* libPods-SSL pinning iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0255776D3810883CCD04ADA0 /* libPods-SSL pinning iOS.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49D047781B2B08F6006F4AC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D047561B2B08F6006F4AC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49D0475D1B2B08F6006F4AC1;
+			remoteInfo = "SSL pinning iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0255776D3810883CCD04ADA0 /* libPods-SSL pinning iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSL pinning iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40E577DC506EC9E4AE8F0B6D /* Pods-SSL pinning iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSL pinning iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSL pinning iOS/Pods-SSL pinning iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		49D0475E1B2B08F6006F4AC1 /* sndrContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sndrContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49D047771B2B08F6006F4AC1 /* sndrContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sndrContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		546D70503AB8A72D59672842 /* Pods-SSL pinning iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSL pinning iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSL pinning iOS/Pods-SSL pinning iOS.release.xcconfig"; sourceTree = "<group>"; };
+		7F7917312143FF2F009D6A4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F7917362143FF38009D6A4A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7F7917372143FF38009D6A4A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7F7917392143FF38009D6A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7F79173B2143FF38009D6A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F79173D2143FF38009D6A4A /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		7F79173E2143FF38009D6A4A /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		7F79173F2143FF38009D6A4A /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
+		7F7917402143FF38009D6A4A /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
+		7F7917412143FF38009D6A4A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7F7917422143FF38009D6A4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F7917432143FF38009D6A4A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7F8634CA214420FD00F01153 /* sndrContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sndrContactTests.m; sourceTree = "<group>"; };
+		7F8634CD214424E000F01153 /* sndrContact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sndrContact.xcdatamodel; sourceTree = "<group>"; };
+		7F8634CF2144321D00F01153 /* empty.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = empty.cpp; sourceTree = "<group>"; };
+		7FFE06882145AF510082ABFC /* sndrContactFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sndrContactFinal.xcdatamodel; sourceTree = "<group>"; };
+		7FFE06892145B18A0082ABFC /* sndrContact2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sndrContact2.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49D0475B1B2B08F6006F4AC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE5016E049437FE71624B49 /* libPods-SSL pinning iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D047741B2B08F6006F4AC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2564312D0EBD97032CABB3B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0255776D3810883CCD04ADA0 /* libPods-SSL pinning iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49D047551B2B08F6006F4AC1 = {
+			isa = PBXGroup;
+			children = (
+				7F7917352143FF38009D6A4A /* sndrContact */,
+				7F7917302143FF2F009D6A4A /* sndrContactTests */,
+				49D0475F1B2B08F6006F4AC1 /* Products */,
+				FDAF628812F9679FFF9AB0B8 /* Pods */,
+				2564312D0EBD97032CABB3B7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		49D0475F1B2B08F6006F4AC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49D0475E1B2B08F6006F4AC1 /* sndrContact.app */,
+				49D047771B2B08F6006F4AC1 /* sndrContactTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F7917302143FF2F009D6A4A /* sndrContactTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F8634CA214420FD00F01153 /* sndrContactTests.m */,
+				7F7917312143FF2F009D6A4A /* Info.plist */,
+			);
+			path = sndrContactTests;
+			sourceTree = "<group>";
+		};
+		7F7917352143FF38009D6A4A /* sndrContact */ = {
+			isa = PBXGroup;
+			children = (
+				7F7917362143FF38009D6A4A /* AppDelegate.h */,
+				7F7917372143FF38009D6A4A /* AppDelegate.m */,
+				7F8634CC214424E000F01153 /* sndrContact.xcdatamodeld */,
+				7F7917382143FF38009D6A4A /* LaunchScreen.xib */,
+				7F79173A2143FF38009D6A4A /* Main.storyboard */,
+				7F79173C2143FF38009D6A4A /* Controllers */,
+				7F7917412143FF38009D6A4A /* Images.xcassets */,
+				7F7917422143FF38009D6A4A /* Info.plist */,
+				7F7917432143FF38009D6A4A /* main.m */,
+				7F7917442143FF38009D6A4A /* Resouces */,
+			);
+			path = sndrContact;
+			sourceTree = "<group>";
+		};
+		7F79173C2143FF38009D6A4A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F79173D2143FF38009D6A4A /* ContactViewController.h */,
+				7F79173E2143FF38009D6A4A /* ContactViewController.m */,
+				7F79173F2143FF38009D6A4A /* ContactDetailViewController.h */,
+				7F7917402143FF38009D6A4A /* ContactDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7F7917442143FF38009D6A4A /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				7F8634CF2144321D00F01153 /* empty.cpp */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
+		FDAF628812F9679FFF9AB0B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40E577DC506EC9E4AE8F0B6D /* Pods-SSL pinning iOS.debug.xcconfig */,
+				546D70503AB8A72D59672842 /* Pods-SSL pinning iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49D0475D1B2B08F6006F4AC1 /* sndrContact */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49D047811B2B08F6006F4AC1 /* Build configuration list for PBXNativeTarget "sndrContact" */;
+			buildPhases = (
+				4B19F819627CEEAB9E7255F3 /* Check Pods Manifest.lock */,
+				49D0475A1B2B08F6006F4AC1 /* Sources */,
+				49D0475B1B2B08F6006F4AC1 /* Frameworks */,
+				49D0475C1B2B08F6006F4AC1 /* Resources */,
+				07861147DFB47882C3AEB381 /* Copy Pods Resources */,
+				1ECC24F49397F180DD53A834 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sndrContact;
+			productName = "SSL pinning iOS";
+			productReference = 49D0475E1B2B08F6006F4AC1 /* sndrContact.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49D047761B2B08F6006F4AC1 /* sndrContactTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49D047841B2B08F6006F4AC1 /* Build configuration list for PBXNativeTarget "sndrContactTests" */;
+			buildPhases = (
+				49D047731B2B08F6006F4AC1 /* Sources */,
+				49D047741B2B08F6006F4AC1 /* Frameworks */,
+				49D047751B2B08F6006F4AC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49D047791B2B08F6006F4AC1 /* PBXTargetDependency */,
+			);
+			name = sndrContactTests;
+			productName = "SSL pinning iOSTests";
+			productReference = 49D047771B2B08F6006F4AC1 /* sndrContactTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49D047561B2B08F6006F4AC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = sndr;
+				TargetAttributes = {
+					49D0475D1B2B08F6006F4AC1 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = B8P24AZNQT;
+					};
+					49D047761B2B08F6006F4AC1 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = B8P24AZNQT;
+						TestTargetID = 49D0475D1B2B08F6006F4AC1;
+					};
+				};
+			};
+			buildConfigurationList = 49D047591B2B08F6006F4AC1 /* Build configuration list for PBXProject "sndrContact" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49D047551B2B08F6006F4AC1;
+			productRefGroup = 49D0475F1B2B08F6006F4AC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49D0475D1B2B08F6006F4AC1 /* sndrContact */,
+				49D047761B2B08F6006F4AC1 /* sndrContactTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49D0475C1B2B08F6006F4AC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F79174C2143FF38009D6A4A /* Info.plist in Resources */,
+				7F79174B2143FF38009D6A4A /* Images.xcassets in Resources */,
+				7F7917472143FF38009D6A4A /* LaunchScreen.xib in Resources */,
+				7F7917482143FF38009D6A4A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D047751B2B08F6006F4AC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F7917332143FF2F009D6A4A /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07861147DFB47882C3AEB381 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSL pinning iOS/Pods-SSL pinning iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1ECC24F49397F180DD53A834 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSL pinning iOS/Pods-SSL pinning iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B19F819627CEEAB9E7255F3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49D0475A1B2B08F6006F4AC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F7917462143FF38009D6A4A /* AppDelegate.m in Sources */,
+				7F7917492143FF38009D6A4A /* ContactViewController.m in Sources */,
+				7F79174D2143FF38009D6A4A /* main.m in Sources */,
+				7F8634CE214424E000F01153 /* sndrContact.xcdatamodeld in Sources */,
+				7F79174A2143FF38009D6A4A /* ContactDetailViewController.m in Sources */,
+				7F8634D02144321D00F01153 /* empty.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D047731B2B08F6006F4AC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F8634CB214420FD00F01153 /* sndrContactTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49D047791B2B08F6006F4AC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49D0475D1B2B08F6006F4AC1 /* sndrContact */;
+			targetProxy = 49D047781B2B08F6006F4AC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7F7917382143FF38009D6A4A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F7917392143FF38009D6A4A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		7F79173A2143FF38009D6A4A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F79173B2143FF38009D6A4A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49D0477F1B2B08F6006F4AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		49D047801B2B08F6006F4AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49D047821B2B08F6006F4AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40E577DC506EC9E4AE8F0B6D /* Pods-SSL pinning iOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B8P24AZNQT;
+				INFOPLIST_FILE = "$(SRCROOT)/sndrContact/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mybrightzone.sndrContact;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		49D047831B2B08F6006F4AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 546D70503AB8A72D59672842 /* Pods-SSL pinning iOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B8P24AZNQT;
+				INFOPLIST_FILE = "$(SRCROOT)/sndrContact/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mybrightzone.sndrContact;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		49D047851B2B08F6006F4AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B8P24AZNQT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SSL pinning iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.infinum.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sndrContact.app/sndrContact";
+			};
+			name = Debug;
+		};
+		49D047861B2B08F6006F4AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B8P24AZNQT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SSL pinning iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.infinum.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sndrContact.app/sndrContact";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49D047591B2B08F6006F4AC1 /* Build configuration list for PBXProject "sndrContact" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D0477F1B2B08F6006F4AC1 /* Debug */,
+				49D047801B2B08F6006F4AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49D047811B2B08F6006F4AC1 /* Build configuration list for PBXNativeTarget "sndrContact" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D047821B2B08F6006F4AC1 /* Debug */,
+				49D047831B2B08F6006F4AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49D047841B2B08F6006F4AC1 /* Build configuration list for PBXNativeTarget "sndrContactTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D047851B2B08F6006F4AC1 /* Debug */,
+				49D047861B2B08F6006F4AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7F8634CC214424E000F01153 /* sndrContact.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FFE06892145B18A0082ABFC /* sndrContact2.xcdatamodel */,
+				7FFE06882145AF510082ABFC /* sndrContactFinal.xcdatamodel */,
+				7F8634CD214424E000F01153 /* sndrContact.xcdatamodel */,
+			);
+			currentVersion = 7F8634CD214424E000F01153 /* sndrContact.xcdatamodel */;
+			path = sndrContact.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 49D047561B2B08F6006F4AC1 /* Project object */;
+}
