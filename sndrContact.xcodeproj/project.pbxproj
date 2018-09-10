@@ -22,6 +22,7 @@
 		7FFD66002146CC440064BF7D /* button-done-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FC2146CC430064BF7D /* button-done-selected.png */; };
 		7FFD66012146CC440064BF7D /* button-done-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FD2146CC440064BF7D /* button-done-normal.png */; };
 		7FFD66022146CC440064BF7D /* button-done-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FE2146CC440064BF7D /* button-done-selected@2x.png */; };
+		7FFD6604214735FE0064BF7D /* RNCryptor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFD6603214735FD0064BF7D /* RNCryptor.framework */; };
 		7FFE068D2145E48F0082ABFC /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE068C2145E48E0082ABFC /* ContactCell.m */; };
 		7FFE0692214688D00082ABFC /* sndrContact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE0690214688D00082ABFC /* sndrContact.xcdatamodeld */; };
 		BDE5016E049437FE71624B49 /* libPods-SSL pinning iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0255776D3810883CCD04ADA0 /* libPods-SSL pinning iOS.a */; };
@@ -61,6 +62,7 @@
 		7FFD65FC2146CC430064BF7D /* button-done-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-selected.png"; sourceTree = "<group>"; };
 		7FFD65FD2146CC440064BF7D /* button-done-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-normal.png"; sourceTree = "<group>"; };
 		7FFD65FE2146CC440064BF7D /* button-done-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-selected@2x.png"; sourceTree = "<group>"; };
+		7FFD6603214735FD0064BF7D /* RNCryptor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RNCryptor.framework; sourceTree = "<group>"; };
 		7FFE068C2145E48E0082ABFC /* ContactCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = /Users/denisarsenault/Desktop/sndrContactVersion1/sndrContact/Controllers/ContactCell.m; sourceTree = "<absolute>"; };
 		7FFE068E2145E4910082ABFC /* ContactCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = /Users/denisarsenault/Desktop/sndrContactVersion1/sndrContact/Controllers/ContactCell.h; sourceTree = "<absolute>"; };
 		7FFE0691214688D00082ABFC /* sndrContact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sndrContact.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFD6604214735FE0064BF7D /* RNCryptor.framework in Frameworks */,
 				BDE5016E049437FE71624B49 /* libPods-SSL pinning iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +91,7 @@
 		2564312D0EBD97032CABB3B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FFD6603214735FD0064BF7D /* RNCryptor.framework */,
 				0255776D3810883CCD04ADA0 /* libPods-SSL pinning iOS.a */,
 			);
 			name = Frameworks;
@@ -492,6 +496,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B8P24AZNQT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/sndrContact/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -507,6 +515,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B8P24AZNQT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/sndrContact/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
