@@ -22,9 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    bool success = self.getData;
-    
+    bool success = true;
     // Get the core data path
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSLog(@"%@", [paths objectAtIndex:0]);
@@ -56,7 +54,8 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+- (void)applicationWillTerminate:(UIApplication *)application
+{
     // Save Managed Object Context
     [self saveContext];
     
@@ -71,6 +70,7 @@
      }
      */
 }
+
 #pragma mark - Get data
 
 - (bool)getData
@@ -86,7 +86,7 @@
     NSMutableArray *cleanJson = [NSJSONSerialization JSONObjectWithData: cleanJSONData options:kNilOptions error:nil];
     
     NSError *err = nil;
-
+    
     NSDictionary *contactDictionary = [cleanJson objectAtIndex:0];
     NSString *test = [contactDictionary objectForKey:@"First_name"];
     NSLog(@"Test is %@",test);
@@ -96,7 +96,7 @@
     {
         success = YES;
     }
-
+    
     // Load Json into core data
     
     NSArray *contacts = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
@@ -109,7 +109,7 @@
         NSManagedObject *record = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
         
         NSDictionary *contactDictionary = [json objectAtIndex:0];
-
+        
         //{
         //    "First_name": "Josephine",
         //    "last_name": "Darakjy",
@@ -127,7 +127,7 @@
         //}
         
         //NSLog(@"contactDictionary:==== %@ ====", contactDictionary);
-
+        
         // Populate Record
         [record setValue:[contact objectForKey:@"First_name"] forKey:@"first_name"];
         [record setValue:[contact objectForKey:@"last_name"]  forKey:@"last_name"];
@@ -148,9 +148,10 @@
         [self saveContext];
         
     }
-
+    
     return success;
 }
+
 
 #pragma mark - Core Data stack
 
@@ -222,24 +223,6 @@
     return _persistentStoreCoordinator;
 }
  
-#pragma mark - Core Data Saving support
- 
-- (void)saveContext
-{
-    NSManagedObjectContext*managedObjectContext = self.managedObjectContext;
-    
-    if(managedObjectContext != nil)
-    {
-        NSError *error = nil;
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
-        {
-            // This would have a better error handling strategy in a shipping application
-            // abort() would generate a crash log and terminate.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
-}
 
 
 

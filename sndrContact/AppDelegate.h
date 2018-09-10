@@ -14,7 +14,11 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+
+- (bool)getData;
 - (void)saveContext;
+
 
 @end
 
