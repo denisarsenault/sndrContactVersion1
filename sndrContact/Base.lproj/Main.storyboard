@@ -42,7 +42,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0R-Jk-Qr0">
-                                                    <rect key="frame" x="20" y="11" width="126" height="21"/>
+                                                    <rect key="frame" x="3" y="11" width="126" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,18 +57,22 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tid-5A-4PZ" userLabel="Last Name Label">
-                                                    <rect key="frame" x="154" y="11" width="126" height="21"/>
+                                                    <rect key="frame" x="137" y="11" width="126" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P1p-xJ-FM8">
+                                                    <rect key="frame" x="252" y="0.0" width="49" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="R0R-Jk-Qr0" secondAttribute="bottom" constant="11" id="EwA-LK-YLQ"/>
-                                                <constraint firstItem="tGd-vf-jQk" firstAttribute="leading" secondItem="R0R-Jk-Qr0" secondAttribute="trailing" constant="153" id="HvX-Wx-XZ0"/>
+                                                <constraint firstItem="tGd-vf-jQk" firstAttribute="leading" secondItem="R0R-Jk-Qr0" secondAttribute="trailing" constant="170" id="HvX-Wx-XZ0"/>
                                                 <constraint firstItem="R0R-Jk-Qr0" firstAttribute="top" secondItem="Wsd-4d-6on" secondAttribute="top" constant="11" id="Kuk-sN-OIU"/>
-                                                <constraint firstItem="R0R-Jk-Qr0" firstAttribute="leading" secondItem="Wsd-4d-6on" secondAttribute="leading" constant="20" id="dZG-ec-KvF"/>
+                                                <constraint firstItem="R0R-Jk-Qr0" firstAttribute="leading" secondItem="Wsd-4d-6on" secondAttribute="leading" constant="3" id="dZG-ec-KvF"/>
                                                 <constraint firstAttribute="bottom" secondItem="tGd-vf-jQk" secondAttribute="bottom" id="gHz-zk-Jzl"/>
                                                 <constraint firstAttribute="trailing" secondItem="tGd-vf-jQk" secondAttribute="trailing" id="iL9-PT-8u6"/>
                                                 <constraint firstItem="tGd-vf-jQk" firstAttribute="top" secondItem="Wsd-4d-6on" secondAttribute="top" id="nD8-WJ-fHg"/>
@@ -124,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294" y="645"/>
+            <point key="canvasLocation" x="2293.5999999999999" y="644.52773613193403"/>
         </scene>
         <!--Contact Detail-->
         <scene sceneID="hkC-iF-Mws">
@@ -516,7 +520,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contact Detail" id="tvH-G0-oqj">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="0Z2-Xz-O7x"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="0Z2-Xz-O7x">
+                            <connections>
+                                <segue destination="aTb-tc-Gfi" kind="unwind" unwindAction="backToTheStart:" id="DEL-7u-S75"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Ap0-7z-CFN">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z88-tA-9FO">
                                 <rect key="frame" x="291" y="7" width="68" height="30"/>
@@ -549,6 +557,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRQ-R1-aPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aTb-tc-Gfi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3704.8000000000002" y="644.52773613193403"/>
         </scene>

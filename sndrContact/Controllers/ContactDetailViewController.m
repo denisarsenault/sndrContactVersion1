@@ -15,10 +15,18 @@
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIScrollView *ContactDetailViewController;
 
+- (IBAction)Back:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *Back;
+
 
 @end
 
 @implementation ContactDetailViewController
+
+- (IBAction)Back:(id)sender
+{
+    //[self dismissController: nil];
+}
 
 - (void)viewDidLoad
 {
@@ -99,5 +107,12 @@
 //        completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, NULL);
 //    }
 //}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // was this the cancel button?
+    if (sender == self.Back) return;
+    // do any preparation here when the segue is called
+}
 
 @end

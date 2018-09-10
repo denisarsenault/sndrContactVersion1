@@ -353,15 +353,26 @@
 
 #pragma mark -
 #pragma mark Helper Methods
-- (void)saveManagedObjectContext {
+- (void)saveManagedObjectContext
+{
     NSError *error = nil;
     
-    if (![self.managedObjectContext save:&error]) {
-        if (error) {
+    if (![self.managedObjectContext save:&error])
+    {
+        if (error)
+        {
             NSLog(@"Unable to save changes.");
             NSLog(@"%@, %@", error, error.localizedDescription);
         }
     }
+}
+
+- (IBAction)backToTheStart:(UIStoryboardSegue *)segue
+{
+    
+    // grab a reference
+    ContactDetailViewController *contactViewController = segue.sourceViewController;
+
 }
 
 
