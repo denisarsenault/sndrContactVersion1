@@ -63,7 +63,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P1p-xJ-FM8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="picture" translatesAutoresizingMaskIntoConstraints="NO" id="P1p-xJ-FM8">
                                                     <rect key="frame" x="252" y="0.0" width="49" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -79,6 +79,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="Picture" destination="P1p-xJ-FM8" id="JOR-nU-ULI"/>
                                             <outlet property="doneButton" destination="tGd-vf-jQk" id="xkr-iV-W1g"/>
                                             <outlet property="lastNameLabel" destination="tid-5A-4PZ" id="UbD-9H-3vS"/>
                                             <outlet property="nameLabel" destination="R0R-Jk-Qr0" id="1lb-AH-pRT"/>

@@ -96,10 +96,7 @@
     {
         success = YES;
     }
-    
 
-    
-    
     // Load Json into core data
     
     NSArray *contacts = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];

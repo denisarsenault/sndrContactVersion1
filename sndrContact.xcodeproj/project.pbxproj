@@ -18,6 +18,10 @@
 		7F79174D2143FF38009D6A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917432143FF38009D6A4A /* main.m */; };
 		7F8634CB214420FD00F01153 /* sndrContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CA214420FD00F01153 /* sndrContactTests.m */; };
 		7F8634D02144321D00F01153 /* empty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CF2144321D00F01153 /* empty.cpp */; };
+		7FFD65FF2146CC440064BF7D /* button-done-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FB2146CC430064BF7D /* button-done-normal@2x.png */; };
+		7FFD66002146CC440064BF7D /* button-done-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FC2146CC430064BF7D /* button-done-selected.png */; };
+		7FFD66012146CC440064BF7D /* button-done-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FD2146CC440064BF7D /* button-done-normal.png */; };
+		7FFD66022146CC440064BF7D /* button-done-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FE2146CC440064BF7D /* button-done-selected@2x.png */; };
 		7FFE068D2145E48F0082ABFC /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE068C2145E48E0082ABFC /* ContactCell.m */; };
 		7FFE0692214688D00082ABFC /* sndrContact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE0690214688D00082ABFC /* sndrContact.xcdatamodeld */; };
 		BDE5016E049437FE71624B49 /* libPods-SSL pinning iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0255776D3810883CCD04ADA0 /* libPods-SSL pinning iOS.a */; };
@@ -53,6 +57,10 @@
 		7F7917432143FF38009D6A4A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7F8634CA214420FD00F01153 /* sndrContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sndrContactTests.m; sourceTree = "<group>"; };
 		7F8634CF2144321D00F01153 /* empty.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = empty.cpp; sourceTree = "<group>"; };
+		7FFD65FB2146CC430064BF7D /* button-done-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-normal@2x.png"; sourceTree = "<group>"; };
+		7FFD65FC2146CC430064BF7D /* button-done-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-selected.png"; sourceTree = "<group>"; };
+		7FFD65FD2146CC440064BF7D /* button-done-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-normal.png"; sourceTree = "<group>"; };
+		7FFD65FE2146CC440064BF7D /* button-done-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-selected@2x.png"; sourceTree = "<group>"; };
 		7FFE068C2145E48E0082ABFC /* ContactCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = /Users/denisarsenault/Desktop/sndrContactVersion1/sndrContact/Controllers/ContactCell.m; sourceTree = "<absolute>"; };
 		7FFE068E2145E4910082ABFC /* ContactCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = /Users/denisarsenault/Desktop/sndrContactVersion1/sndrContact/Controllers/ContactCell.h; sourceTree = "<absolute>"; };
 		7FFE0691214688D00082ABFC /* sndrContact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sndrContact.xcdatamodel; sourceTree = "<group>"; };
@@ -147,6 +155,10 @@
 		7F7917442143FF38009D6A4A /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				7FFD65FD2146CC440064BF7D /* button-done-normal.png */,
+				7FFD65FB2146CC430064BF7D /* button-done-normal@2x.png */,
+				7FFD65FC2146CC430064BF7D /* button-done-selected.png */,
+				7FFD65FE2146CC440064BF7D /* button-done-selected@2x.png */,
 				7F8634CF2144321D00F01153 /* empty.cpp */,
 			);
 			path = Resouces;
@@ -246,9 +258,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFD66002146CC440064BF7D /* button-done-selected.png in Resources */,
 				7F79174C2143FF38009D6A4A /* Info.plist in Resources */,
+				7FFD66012146CC440064BF7D /* button-done-normal.png in Resources */,
 				7F79174B2143FF38009D6A4A /* Images.xcassets in Resources */,
 				7F7917472143FF38009D6A4A /* LaunchScreen.xib in Resources */,
+				7FFD66022146CC440064BF7D /* button-done-selected@2x.png in Resources */,
+				7FFD65FF2146CC440064BF7D /* button-done-normal@2x.png in Resources */,
 				7F7917482143FF38009D6A4A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

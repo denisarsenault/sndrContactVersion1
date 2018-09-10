@@ -6,6 +6,7 @@
 //  Copyright (c) 2018 Sndr LLC All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "ContactViewController.h"
 #import "ContactCell.h"
 #import <AFNetworking/AFNetworking.h>
@@ -160,26 +161,6 @@
             // Reset Selection
             [self setSelection:nil];
         }
-        
-//    } else if ([segue.identifier isEqualToString:@"updateToDoViewController"])
-//    {
-//        // Obtain Reference to View Controller
-//        TSPUpdateToDoViewController *vc = (TSPUpdateToDoViewController *)[segue destinationViewController];
-//
-//        // Configure View Controller
-//        [vc setManagedObjectContext:self.managedObjectContext];
-//
-//        if (self.selection) {
-//            // Fetch Record
-//            NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:self.selection];
-//
-//            if (record) {
-//                [vc setRecord:record];
-//            }
-//
-//            // Reset Selection
-//            [self setSelection:nil];
-//        }
     }
 }
 
@@ -257,9 +238,22 @@
     // Update Cell
     [cell.nameLabel setText:[record valueForKey:@"first_name"]];
     [cell.lastNameLabel setText:[record valueForKey:@"last_name"]];
-    [cell.doneButton setSelected:[[record valueForKey:@"jpg"] boolValue]];
     
-    [cell setDidTapButtonBlock:^{
+    NSString* str = [record valueForKey:@"jpg"];
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+
+    UIImage* image = [UIImage imageWithData: data];
+
+    if ([UIImage imageWithData:data])
+    {
+        [cell.picture setImage:[UIImage imageWithData:data]];
+    }else
+    {
+        //[cell.picture setImage:@"button-done-normal.png"];
+    }
+
+     
+     [cell setDidTapButtonBlock:^{
         BOOL isDone = [[record valueForKey:@"done"] boolValue];
         
         // Update Record
