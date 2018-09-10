@@ -38,7 +38,8 @@
 #pragma mark Actions
 - (void)didTapButton:(UIButton *)button
 {
-    if (self.didTapButtonBlock) {
+    if (self.didTapButtonBlock)
+    {
         self.didTapButtonBlock();
     }
 }
