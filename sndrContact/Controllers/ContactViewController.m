@@ -46,7 +46,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
     
     // Add Sort Descriptors
-    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"email" ascending:YES]]];
+    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"last_name" ascending:YES]]];
     
     // Initialize Fetched Results Controller
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
@@ -144,6 +144,22 @@
         
         // Configure View Controller
         [contactDetailViewController setManagedObjectContext:self.managedObjectContext];
+
+        // Configure View Controller
+        [contactDetailViewController setManagedObjectContext:self.managedObjectContext];
+
+        if (self.selection)
+        {
+            // Fetch Record
+            NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:self.selection];
+
+            if (record) {
+                [contactDetailViewController setRecord:record];
+            }
+
+            // Reset Selection
+            [self setSelection:nil];
+        }
         
 //    } else if ([segue.identifier isEqualToString:@"updateToDoViewController"])
 //    {
@@ -284,7 +300,7 @@
     [self setSelection:indexPath];
     
     // Perform Segue
-    [self performSegueWithIdentifier:@"updateToDoViewController" sender:self];
+    [self performSegueWithIdentifier:@"ContactDetailSeque" sender:self];
 }
 
 #pragma mark -

@@ -24,13 +24,30 @@
 {
     [super viewDidLoad];
     
+    if (self.record)
+    {
+        // Update Text Field
+        [self.first_name setText:[self.record valueForKey:@"first_name"]];
+        [self.last_name setText:[self.record valueForKey:@"last_name"]];
+        [self.company_name setText:[self.record valueForKey:@"company_name"]];
+        [self.address setText:[self.record valueForKey:@"address"]];
+        [self.city setText:[self.record valueForKey:@"city"]];
+        [self.state setText:[self.record valueForKey:@"state"]];
+        [self.county setText:[self.record valueForKey:@"county"]];
+        [self.zip setText:[self.record valueForKey:@"zip"]];
+        [self.phone1 setText:[self.record valueForKey:@"phone1"]];
+        [self.phone2 setText:[self.record valueForKey:@"phone2"]];
+        [self.email setText:[self.record valueForKey:@"email"]];
+        [self.web setText:[self.record valueForKey:@"web"]];
+    }
+    
 //    UIImage *image = [UIImage imageNamed:@"imageName.jpg"];
 //    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
-
-    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    sessionConfig.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    
-    self.urlSession = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
+//
+//    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+//    sessionConfig.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+//
+//    self.urlSession = [NSURLSession sessionWithConfiguration:sessionConfig delegate:self delegateQueue:nil];
 }
 
 - (IBAction)loadDataHandler:(id)sender

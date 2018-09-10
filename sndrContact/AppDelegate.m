@@ -39,6 +39,9 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    // Save Managed Object Context
+    [self saveContext];
+    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -94,11 +97,7 @@
         success = YES;
     }
     
-    // Create Entity
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.managedObjectContext];
-    
-    // Initialize Record
-    NSManagedObject *record = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+
     
     
     // Load Json into core data
@@ -106,6 +105,12 @@
     NSArray *contacts = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
     for(NSDictionary *contact in contacts)
     {
+        // Create Entity
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.managedObjectContext];
+        
+        // Initialize Record
+        NSManagedObject *record = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+        
         NSDictionary *contactDictionary = [json objectAtIndex:0];
 
         //{
@@ -127,8 +132,8 @@
         //NSLog(@"contactDictionary:==== %@ ====", contactDictionary);
 
         // Populate Record
-        [record setValue:[[contact objectForKey:@"First_name"] description] forKey:@"first_name"];
-        [record setValue:[[contact objectForKey:@"last_name"] description] forKey:@"last_name"];
+        [record setValue:[contact objectForKey:@"First_name"] forKey:@"first_name"];
+        [record setValue:[contact objectForKey:@"last_name"]  forKey:@"last_name"];
         [record setValue:[[contact objectForKey:@"company_name"] description] forKey:@"company_name"];
         [record setValue:[[contact objectForKey:@"address"]  description] forKey:@"address"];
         [record setValue:[[contact objectForKey:@"city"] description] forKey:@"city"];
@@ -141,24 +146,11 @@
         [record setValue:[[contact objectForKey:@"web"]  description] forKey:@"web"];
         [record setValue:[[contact objectForKey:@"jpg"]   description] forKey:@"jpg"];
         NSLog(@"record:==== %@ ====", record);
+        
         // Save Record
-        if ([self.managedObjectContext save:&error])
-        {
-            
-            
-        } else
-        {
-            if (error)
-            {
-                NSLog(@"Unable to save record.");
-                NSLog(@"%@, %@", error, error.localizedDescription);
-            }
-            
-            // Show Alert View
-            [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your Download could not be saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        }
+        [self saveContext];
+        
     }
-
 
     return success;
 }
