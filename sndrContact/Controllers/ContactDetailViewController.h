@@ -26,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *phone2;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *web;
+@property (weak, nonatomic) IBOutlet UIImageView *jpg;
 
 @end
