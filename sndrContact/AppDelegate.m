@@ -24,6 +24,10 @@
 {
     // Override point for customization after application launch.
     bool success = self.getData;
+    
+    // Get the core data path
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSLog(@"%@", [paths objectAtIndex:0]);
     return success;
 }
 
@@ -120,42 +124,41 @@
         //    "jpg": ""
         //}
         
-        NSLog(@"contactDictionary:==== %@ ====", contactDictionary);
+        //NSLog(@"contactDictionary:==== %@ ====", contactDictionary);
 
         // Populate Record
-        [record setValue:[contact objectForKey:@"first_name"] forKey:@"First_name"];
-        [record setValue:[contact objectForKey:@"last_name"] forKey:@"last_name"];
-        [record setValue:[contact objectForKey:@"company_name"] forKey:@"company_name"];
-        [record setValue:[contact objectForKey:@"address"]  forKey:@"address"];
-        [record setValue:[contact objectForKey:@"city"] forKey:@"city"];
-        [record setValue:[contact objectForKey:@"county"] forKey:@"county"];
-        [record setValue:[contact objectForKey:@"state"]  forKey:@"state"];
+        [record setValue:[[contact objectForKey:@"First_name"] description] forKey:@"first_name"];
+        [record setValue:[[contact objectForKey:@"last_name"] description] forKey:@"last_name"];
+        [record setValue:[[contact objectForKey:@"company_name"] description] forKey:@"company_name"];
+        [record setValue:[[contact objectForKey:@"address"]  description] forKey:@"address"];
+        [record setValue:[[contact objectForKey:@"city"] description] forKey:@"city"];
+        [record setValue:[[contact objectForKey:@"county"] description] forKey:@"county"];
+        [record setValue:[[contact objectForKey:@"state"]  description] forKey:@"state"];
         [record setValue:[[contact objectForKey:@"zip"] description] forKey:@"zip"];
         [record setValue:[[contact objectForKey:@"phone1"] description] forKey:@"phone1"];
         [record setValue:[[contact objectForKey:@"phone2"] description] forKey:@"phone2"];
-        [record setValue:[contact objectForKey:@"email"]  forKey:@"email"];
-        [record setValue:[contact objectForKey:@"web"]  forKey:@"web"];
-        [record setValue:[contact objectForKey:@"jpg"]   forKey:@"jpg"];
-        
-
-    }
-    
-    // Save Record
-    if ([self.managedObjectContext save:&error])
-    {
-        
-        
-    } else
-    {
-        if (error)
+        [record setValue:[[contact objectForKey:@"email"]  description] forKey:@"email"];
+        [record setValue:[[contact objectForKey:@"web"]  description] forKey:@"web"];
+        [record setValue:[[contact objectForKey:@"jpg"]   description] forKey:@"jpg"];
+        NSLog(@"record:==== %@ ====", record);
+        // Save Record
+        if ([self.managedObjectContext save:&error])
         {
-            NSLog(@"Unable to save record.");
-            NSLog(@"%@, %@", error, error.localizedDescription);
+            
+            
+        } else
+        {
+            if (error)
+            {
+                NSLog(@"Unable to save record.");
+                NSLog(@"%@, %@", error, error.localizedDescription);
+            }
+            
+            // Show Alert View
+            [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your Download could not be saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
-        
-        // Show Alert View
-        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your Download could not be saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
+
 
     return success;
 }

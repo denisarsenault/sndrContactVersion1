@@ -42,6 +42,54 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pR5-ti-uP0">
                                 <rect key="frame" x="16" y="87" width="343" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" id="ydg-ZA-d1y" customClass="ContactCell">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ydg-ZA-d1y" id="Wsd-4d-6on">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0R-Jk-Qr0">
+                                                    <rect key="frame" x="20" y="11" width="126" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGd-vf-jQk">
+                                                    <rect key="frame" x="299" y="0.0" width="44" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="8nA-fH-gdJ"/>
+                                                    </constraints>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tid-5A-4PZ" userLabel="Last Name Label">
+                                                    <rect key="frame" x="154" y="11" width="126" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="R0R-Jk-Qr0" secondAttribute="bottom" constant="11" id="EwA-LK-YLQ"/>
+                                                <constraint firstItem="tGd-vf-jQk" firstAttribute="leading" secondItem="R0R-Jk-Qr0" secondAttribute="trailing" constant="153" id="HvX-Wx-XZ0"/>
+                                                <constraint firstItem="R0R-Jk-Qr0" firstAttribute="top" secondItem="Wsd-4d-6on" secondAttribute="top" constant="11" id="Kuk-sN-OIU"/>
+                                                <constraint firstItem="R0R-Jk-Qr0" firstAttribute="leading" secondItem="Wsd-4d-6on" secondAttribute="leading" constant="20" id="dZG-ec-KvF"/>
+                                                <constraint firstAttribute="bottom" secondItem="tGd-vf-jQk" secondAttribute="bottom" id="gHz-zk-Jzl"/>
+                                                <constraint firstAttribute="trailing" secondItem="tGd-vf-jQk" secondAttribute="trailing" id="iL9-PT-8u6"/>
+                                                <constraint firstItem="tGd-vf-jQk" firstAttribute="top" secondItem="Wsd-4d-6on" secondAttribute="top" id="nD8-WJ-fHg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="doneButton" destination="tGd-vf-jQk" id="xkr-iV-W1g"/>
+                                            <outlet property="lastNameLabel" destination="tid-5A-4PZ" id="UbD-9H-3vS"/>
+                                            <outlet property="nameLabel" destination="R0R-Jk-Qr0" id="1lb-AH-pRT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="ZtS-SF-J4d"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="hnn-8W-ftg"/>
@@ -82,12 +130,13 @@
                         <outlet property="ContactViewController" destination="pR5-ti-uP0" id="twH-dJ-oXK"/>
                         <outlet property="activityIndicator" destination="H8Q-9a-r01" id="gzl-g7-yyg"/>
                         <outlet property="dataTextView" destination="QeY-CB-P75" id="MP4-5S-BZ5"/>
-                        <segue destination="iXs-0t-wwK" kind="showDetail" id="4yr-7Q-Iex"/>
+                        <outlet property="tableView" destination="pR5-ti-uP0" id="siR-Ih-2CF"/>
+                        <segue destination="iXs-0t-wwK" kind="showDetail" identifier="ContactDetailSeque" id="4yr-7Q-Iex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="646"/>
+            <point key="canvasLocation" x="1532" y="644.52773613193403"/>
         </scene>
         <!--Contact Detail View Controller-->
         <scene sceneID="hkC-iF-Mws">
@@ -319,6 +368,10 @@
                             <constraint firstItem="Z88-tA-9FO" firstAttribute="top" secondItem="qB6-Oa-Rrj" secondAttribute="bottom" constant="38" id="yUk-3e-cvd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ContactDetailViewController" destination="3dG-VB-dKI" id="uD5-zF-6cS"/>
+                        <outlet property="activityIndicator" destination="m17-zG-nzf" id="5BQ-rB-1Bp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRQ-R1-aPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
