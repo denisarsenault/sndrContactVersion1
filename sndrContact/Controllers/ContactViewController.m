@@ -11,10 +11,13 @@
 #import "ContactCell.h"
 #import <AFNetworking/AFNetworking.h>
 #import "ContactDetailViewController.h"
+#import "AppDelegate.h"
 
 
 @interface ContactViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *ContactViewController;
+@property (weak, nonatomic) IBOutlet UIButton *loaddata;
+@property (weak, nonatomic) IBOutlet UIButton *DeleteAllRecords;
 
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -57,19 +60,23 @@
     
     // Perform Fetch
     NSError *error = nil;
-    [self.fetchedResultsController performFetch:&error];
+    if (![self.fetchedResultsController performFetch:&error])
+    {
+        // Show Alert View
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Error Getting data." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
     
-    if (error) {
+    if (error)
+    {
         NSLog(@"Unable to perform fetch.");
         NSLog(@"%@, %@", error, error.localizedDescription);
     }
-    
-    // Add all the values for display
+    if ([[self.fetchedResultsController sections] count] == 0)
+    {
+        // Show Alert View
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"No Data Available." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
 
-    
-
-    
-    //tableData = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
 }
 
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -242,8 +249,6 @@
     NSString* str = [record valueForKey:@"jpg"];
     NSData *data = [[NSData alloc]initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
 
-    UIImage* image = [UIImage imageWithData: data];
-
     if ([UIImage imageWithData:data])
     {
         [cell.picture setImage:[UIImage imageWithData:data]];
@@ -299,8 +304,10 @@
 
 #pragma mark -
 #pragma mark Core Data Stack
-- (NSManagedObjectContext *)managedObjectContext {
-    if (_managedObjectContext) {
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if (_managedObjectContext)
+    {
         return _managedObjectContext;
     }
     
@@ -314,8 +321,10 @@
     return _managedObjectContext;
 }
 
-- (NSManagedObjectModel *)managedObjectModel {
-    if (_managedObjectModel) {
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel)
+    {
         return _managedObjectModel;
     }
     
@@ -326,8 +335,10 @@
     return _managedObjectModel;
 }
 
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (_persistentStoreCoordinator) {
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (_persistentStoreCoordinator)
+    {
         return _persistentStoreCoordinator;
     }
     
@@ -337,7 +348,8 @@
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+    {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
@@ -361,6 +373,118 @@
     }
 }
 
+#pragma mark - Get data
+
+- (bool)getData
+{
+    bool success = NO;
+    NSError *error;
+    NSString *url_string = [NSString stringWithFormat: @"https://sndr.com/wp-content/uploads/2018/09/testDataJson.txt"];
+    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
+    NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    
+    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSData *cleanJSONData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableArray *cleanJson = [NSJSONSerialization JSONObjectWithData: cleanJSONData options:kNilOptions error:nil];
+    
+    NSError *err = nil;
+    
+    NSDictionary *contactDictionary = [cleanJson objectAtIndex:0];
+    NSString *test = [contactDictionary objectForKey:@"First_name"];
+    NSLog(@"Test is %@",test);
+    //NSLog(@"json: %@", json);
+    
+    if (json)
+    {
+        success = YES;
+    }
+    
+    // Load Json into core data
+    
+    NSArray *contacts = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+    for(NSDictionary *contact in contacts)
+    {
+        // Create Entity
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.managedObjectContext];
+        
+        // Initialize Record
+        NSManagedObject *record = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+        
+        NSDictionary *contactDictionary = [json objectAtIndex:0];
+        
+        //{
+        //    "First_name": "Josephine",
+        //    "last_name": "Darakjy",
+        //    "company_name": "effrey A Chanay Esq",
+        //    "address": "4 B Blue Ridge Blvd",
+        //    "city": "Brighton",
+        //    "county": "Livingston",
+        //    "state": "MI",
+        //    "zip": 48116,
+        //    "phone1": "810-292-9388",
+        //    "phone2": "810-374-9840",
+        //    "email": "josephine_darakjy@darakjy.org",
+        //    "web": "http://www.chanayjeffreyaesq.com",
+        //    "jpg": ""
+        //}
+        
+        //NSLog(@"contactDictionary:==== %@ ====", contactDictionary);
+        
+        // Populate Record
+        [record setValue:[contact objectForKey:@"First_name"] forKey:@"first_name"];
+        [record setValue:[contact objectForKey:@"last_name"]  forKey:@"last_name"];
+        [record setValue:[[contact objectForKey:@"company_name"] description] forKey:@"company_name"];
+        [record setValue:[[contact objectForKey:@"address"]  description] forKey:@"address"];
+        [record setValue:[[contact objectForKey:@"city"] description] forKey:@"city"];
+        [record setValue:[[contact objectForKey:@"county"] description] forKey:@"county"];
+        [record setValue:[[contact objectForKey:@"state"]  description] forKey:@"state"];
+        [record setValue:[[contact objectForKey:@"zip"] description] forKey:@"zip"];
+        [record setValue:[[contact objectForKey:@"phone1"] description] forKey:@"phone1"];
+        [record setValue:[[contact objectForKey:@"phone2"] description] forKey:@"phone2"];
+        [record setValue:[[contact objectForKey:@"email"]  description] forKey:@"email"];
+        [record setValue:[[contact objectForKey:@"web"]  description] forKey:@"web"];
+        [record setValue:[[contact objectForKey:@"jpg"]   description] forKey:@"jpg"];
+        NSLog(@"record:==== %@ ====", record);
+        
+        // Save Record
+        [self saveContext];
+        
+    }
+    
+    return success;
+}
+
+#pragma mark - Core Data support
+
+- (void)saveContext
+{
+    NSManagedObjectContext*managedObjectContext = self.managedObjectContext;
+    
+    if(managedObjectContext != nil)
+    {
+        NSError *error = nil;
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
+        {
+            // This would have a better error handling strategy in a shipping application
+            // abort() would generate a crash log and terminate.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
+- (void)Delete
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
+    NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+    
+    NSError *deleteError = nil;
+    [_persistentStoreCoordinator executeRequest:delete withContext:_managedObjectContext error:&deleteError];
+}
+
+#pragma mark -
+#pragma mark Return Segue
+
 - (IBAction)backToTheStart:(UIStoryboardSegue *)segue
 {
     
@@ -368,6 +492,20 @@
     ContactDetailViewController *contactViewController = segue.sourceViewController;
 
 }
+
+#pragma mark -
+#pragma mark Button Methods
+
+- (IBAction)loaddata:(id)sender
+{
+    [self getData];
+}
+
+- (IBAction)deleteAll:(id)sender
+{
+    [self Delete];
+}
+
 
 
 @end
