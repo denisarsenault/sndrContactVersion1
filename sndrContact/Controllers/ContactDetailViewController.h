@@ -28,4 +28,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *web;
 @property (weak, nonatomic) IBOutlet UIImageView *jpg;
 
+- (NSString*)RNEncrypt:(NSString *)dataString;
+- (NSString*)RNDecrypt:(NSString*)dataString;
 @end

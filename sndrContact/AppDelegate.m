@@ -38,7 +38,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Save Managed Object Context
-    [self saveContext];
+    //[self saveContext];
     
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -57,7 +57,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Save Managed Object Context
-    [self saveContext];
+    //[self saveContext];
     
     /*
      NSError *error = nil;
@@ -70,88 +70,6 @@
      }
      */
 }
-
-#pragma mark - Get data
-
-- (bool)getData
-{
-    bool success = NO;
-    NSError *error;
-    NSString *url_string = [NSString stringWithFormat: @"https://sndr.com/wp-content/uploads/2018/09/testDataJson.txt"];
-    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
-    NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-    
-    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSData *cleanJSONData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSMutableArray *cleanJson = [NSJSONSerialization JSONObjectWithData: cleanJSONData options:kNilOptions error:nil];
-    
-    NSError *err = nil;
-    
-    NSDictionary *contactDictionary = [cleanJson objectAtIndex:0];
-    NSString *test = [contactDictionary objectForKey:@"First_name"];
-    NSLog(@"Test is %@",test);
-    //NSLog(@"json: %@", json);
-    
-    if (json)
-    {
-        success = YES;
-    }
-    
-    // Load Json into core data
-    
-    NSArray *contacts = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
-    for(NSDictionary *contact in contacts)
-    {
-        // Create Entity
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.managedObjectContext];
-        
-        // Initialize Record
-        NSManagedObject *record = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
-        
-        NSDictionary *contactDictionary = [json objectAtIndex:0];
-        
-        //{
-        //    "First_name": "Josephine",
-        //    "last_name": "Darakjy",
-        //    "company_name": "effrey A Chanay Esq",
-        //    "address": "4 B Blue Ridge Blvd",
-        //    "city": "Brighton",
-        //    "county": "Livingston",
-        //    "state": "MI",
-        //    "zip": 48116,
-        //    "phone1": "810-292-9388",
-        //    "phone2": "810-374-9840",
-        //    "email": "josephine_darakjy@darakjy.org",
-        //    "web": "http://www.chanayjeffreyaesq.com",
-        //    "jpg": ""
-        //}
-        
-        //NSLog(@"contactDictionary:==== %@ ====", contactDictionary);
-        
-        // Populate Record
-        [record setValue:[contact objectForKey:@"First_name"] forKey:@"first_name"];
-        [record setValue:[contact objectForKey:@"last_name"]  forKey:@"last_name"];
-        [record setValue:[[contact objectForKey:@"company_name"] description] forKey:@"company_name"];
-        [record setValue:[[contact objectForKey:@"address"]  description] forKey:@"address"];
-        [record setValue:[[contact objectForKey:@"city"] description] forKey:@"city"];
-        [record setValue:[[contact objectForKey:@"county"] description] forKey:@"county"];
-        [record setValue:[[contact objectForKey:@"state"]  description] forKey:@"state"];
-        [record setValue:[[contact objectForKey:@"zip"] description] forKey:@"zip"];
-        [record setValue:[[contact objectForKey:@"phone1"] description] forKey:@"phone1"];
-        [record setValue:[[contact objectForKey:@"phone2"] description] forKey:@"phone2"];
-        [record setValue:[[contact objectForKey:@"email"]  description] forKey:@"email"];
-        [record setValue:[[contact objectForKey:@"web"]  description] forKey:@"web"];
-        [record setValue:[[contact objectForKey:@"jpg"]   description] forKey:@"jpg"];
-        NSLog(@"record:==== %@ ====", record);
-        
-        // Save Record
-        [self saveContext];
-        
-    }
-    
-    return success;
-}
-
 
 #pragma mark - Core Data stack
 
@@ -222,8 +140,5 @@
 
     return _persistentStoreCoordinator;
 }
- 
-
-
 
 @end

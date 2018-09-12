@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 
 
+
 @interface ContactViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *ContactViewController;
 @property (weak, nonatomic) IBOutlet UIButton *loaddata;
@@ -40,10 +41,6 @@
 {
     [super viewDidLoad];
     
-//    if ([ContactViewController isKindOfClass:[ContactViewController class]])
-//    {
-//        [ContactViewController setManagedObjectContext:self.managedObjectContext];
-//    }
     // Initialize table data
     
     // Initialize Fetch Request
@@ -63,7 +60,28 @@
     if (![self.fetchedResultsController performFetch:&error])
     {
         // Show Alert View
-        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Error Getting data." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@""
+                                     message:@"New Data Fetched"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        //Add Buttons
+        
+        UIAlertAction* okButton = [UIAlertAction
+                                   actionWithTitle:@"Ok"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action)
+                                   {
+                                       
+                                   }];
+        
+        
+        //Add your buttons to alert controller
+        
+        [alert addAction:okButton];
+        
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
     }
     
     if (error)
@@ -74,64 +92,37 @@
     if ([[self.fetchedResultsController sections] count] == 0)
     {
         // Show Alert View
-        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"No Data Available." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@"Warning"
+                                     message:@"Error was encountered, Check network connection"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        //Add Buttons
+        
+        UIAlertAction* okButton = [UIAlertAction
+                                   actionWithTitle:@"Ok"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action)
+                                   {
+                                       
+                                   }];
+        
+        
+        //Add your buttons to alert controller
+        
+        [alert addAction:okButton];
+        
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
     }
 
 }
-
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return [tableData count];
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *simpleTableIdentifier = @"SimpleTableItem";
-//
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-//
-//    if (cell == nil)
-//    {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-//    }
-//
-//    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
-//    return cell;
-//}
 
 #pragma mark - Networking
 
 - (IBAction)fetchData:(id)sender
 {
-//    self.dataTextView.text = @"";
-//
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//
-//    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey];
-//    manager.securityPolicy = policy;
-//
-//    // optional
-//    NSString *pathToCert = [[NSBundle mainBundle]pathForResource:@"github.com" ofType:@"cer"];
-//    NSData *localCertificate = [NSData dataWithContentsOfFile:pathToCert];
-//    manager.securityPolicy.pinnedCertificates = @[localCertificate];
-//
-//    [self.activityIndicator startAnimating];
-//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-//    [manager GET:self.urlField.text parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        [self.activityIndicator stopAnimating];
-//        NSLog(@"Response: %@", responseObject);
-//
-//        self.dataTextView.text = operation.responseString;
-//        self.dataTextView.textColor = [UIColor darkTextColor];
-//
-//
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        [self.activityIndicator stopAnimating];
-//        NSLog(@"Error: %@", error);
-//
-//        self.dataTextView.text = error.localizedDescription;
-//        self.dataTextView.textColor = [UIColor redColor];
-//    }];
+
 }
 
 #pragma mark - Textfield delegate
@@ -161,7 +152,8 @@
             // Fetch Record
             NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:self.selection];
 
-            if (record) {
+            if (record)
+            {
                 [contactDetailViewController setRecord:record];
             }
 
@@ -229,7 +221,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //ContactCell *cell = (ContactCell *)[[tableView dequeueReusableCellWithIdentifier:@"ContactCell" forIndexPath:indexPath];
     ContactCell *cell = (ContactCell *)[tableView dequeueReusableCellWithIdentifier:@"ContactCell" forIndexPath:indexPath];
     // Configure Table View Cell
     [self configureCell:cell atIndexPath:indexPath];
@@ -243,10 +234,10 @@
     NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Update Cell
-    [cell.nameLabel setText:[record valueForKey:@"first_name"]];
-    [cell.lastNameLabel setText:[record valueForKey:@"last_name"]];
+    [cell.nameLabel setText:[self RNDecrypt:[record valueForKey:@"first_name"]]];
+    [cell.lastNameLabel setText:[self RNDecrypt:[record valueForKey:@"last_name"]]];
     
-    NSString* str = [record valueForKey:@"jpg"];
+    NSString* str = [self RNDecrypt:[record valueForKey:@"jpg"]];
     NSData *data = [[NSData alloc]initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
 
     if ([UIImage imageWithData:data])
@@ -314,7 +305,7 @@
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     
     if (coordinator) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc]  initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     
@@ -340,7 +331,7 @@
     if (_persistentStoreCoordinator)
     {
         return _persistentStoreCoordinator;
-    }
+     }
     
     NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"sndrContact.sqlite"];
@@ -377,6 +368,8 @@
 
 - (bool)getData
 {
+    [self.activityIndicator startAnimating];
+    
     bool success = NO;
     NSError *error;
     NSString *url_string = [NSString stringWithFormat: @"https://sndr.com/wp-content/uploads/2018/09/testDataJson.txt"];
@@ -386,8 +379,6 @@
     NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     NSData *cleanJSONData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *cleanJson = [NSJSONSerialization JSONObjectWithData: cleanJSONData options:kNilOptions error:nil];
-    
-    NSError *err = nil;
     
     NSDictionary *contactDictionary = [cleanJson objectAtIndex:0];
     NSString *test = [contactDictionary objectForKey:@"First_name"];
@@ -409,48 +400,44 @@
         
         // Initialize Record
         NSManagedObject *record = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
-        
-        NSDictionary *contactDictionary = [json objectAtIndex:0];
-        
-        //{
-        //    "First_name": "Josephine",
-        //    "last_name": "Darakjy",
-        //    "company_name": "effrey A Chanay Esq",
-        //    "address": "4 B Blue Ridge Blvd",
-        //    "city": "Brighton",
-        //    "county": "Livingston",
-        //    "state": "MI",
-        //    "zip": 48116,
-        //    "phone1": "810-292-9388",
-        //    "phone2": "810-374-9840",
-        //    "email": "josephine_darakjy@darakjy.org",
-        //    "web": "http://www.chanayjeffreyaesq.com",
-        //    "jpg": ""
-        //}
-        
-        //NSLog(@"contactDictionary:==== %@ ====", contactDictionary);
+
+        // Populate Record
+//        [record setValue:[contact objectForKey:@"First_name"] forKey:@"first_name"];
+//        [record setValue:[contact objectForKey:@"last_name"]  forKey:@"last_name"];
+//        [record setValue:[[contact objectForKey:@"company_name"] description] forKey:@"company_name"];
+//        [record setValue:[[contact objectForKey:@"address"]  description] forKey:@"address"];
+//        [record setValue:[[contact objectForKey:@"city"] description] forKey:@"city"];
+//        [record setValue:[[contact objectForKey:@"county"] description] forKey:@"county"];
+//        [record setValue:[[contact objectForKey:@"state"]  description] forKey:@"state"];
+//        [record setValue:[[contact objectForKey:@"zip"] description] forKey:@"zip"];
+//        [record setValue:[[contact objectForKey:@"phone1"] description] forKey:@"phone1"];
+//        [record setValue:[[contact objectForKey:@"phone2"] description] forKey:@"phone2"];
+//        [record setValue:[[contact objectForKey:@"email"]  description] forKey:@"email"];
+//        [record setValue:[[contact objectForKey:@"web"]  description] forKey:@"web"];
+//        [record setValue:[[contact objectForKey:@"jpg"]   description] forKey:@"jpg"];
         
         // Populate Record
-        [record setValue:[contact objectForKey:@"First_name"] forKey:@"first_name"];
-        [record setValue:[contact objectForKey:@"last_name"]  forKey:@"last_name"];
-        [record setValue:[[contact objectForKey:@"company_name"] description] forKey:@"company_name"];
-        [record setValue:[[contact objectForKey:@"address"]  description] forKey:@"address"];
-        [record setValue:[[contact objectForKey:@"city"] description] forKey:@"city"];
-        [record setValue:[[contact objectForKey:@"county"] description] forKey:@"county"];
-        [record setValue:[[contact objectForKey:@"state"]  description] forKey:@"state"];
-        [record setValue:[[contact objectForKey:@"zip"] description] forKey:@"zip"];
-        [record setValue:[[contact objectForKey:@"phone1"] description] forKey:@"phone1"];
-        [record setValue:[[contact objectForKey:@"phone2"] description] forKey:@"phone2"];
-        [record setValue:[[contact objectForKey:@"email"]  description] forKey:@"email"];
-        [record setValue:[[contact objectForKey:@"web"]  description] forKey:@"web"];
-        [record setValue:[[contact objectForKey:@"jpg"]   description] forKey:@"jpg"];
+        NSLog(@"contact:==== %@ ====", contact);
+        [record setValue:[self RNEncrypt:[contact objectForKey:@"First_name"]] forKey:@"first_name"];
+        [record setValue:[self RNEncrypt:[contact objectForKey:@"last_name"]] forKey:@"last_name"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"company_name"] description]] forKey:@"company_name"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"address"]  description]]  forKey:@"address"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"city"] description]] forKey:@"city"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"state"]  description]] forKey:@"state"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"county"] description]] forKey:@"county"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"zip"] description]] forKey:@"zip"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"phone1"] description]] forKey:@"phone1"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"phone2"] description]] forKey:@"phone2"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"email"]  description]] forKey:@"email"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"web"]  description]] forKey:@"web"];
+        [record setValue:[self RNEncrypt:[[contact objectForKey:@"jpg"]  description]] forKey:@"jpg"];
         NSLog(@"record:==== %@ ====", record);
         
         // Save Record
         [self saveContext];
         
     }
-    
+    [self.activityIndicator stopAnimating];
     return success;
 }
 
@@ -475,11 +462,16 @@
 
 - (void)Delete
 {
+    [self.activityIndicator startAnimating];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
+    
     NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
     
     NSError *deleteError = nil;
     [_persistentStoreCoordinator executeRequest:delete withContext:_managedObjectContext error:&deleteError];
+    
+    [self.activityIndicator stopAnimating];
+    
 }
 
 #pragma mark -
@@ -489,21 +481,64 @@
 {
     
     // grab a reference
-    ContactDetailViewController *contactViewController = segue.sourceViewController;
+    //ContactDetailViewController *contactViewController = segue.sourceViewController;
 
 }
+
+- (NSString*)RNEncrypt:(NSString *)dataString
+{
+    NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSData *encryptedData = [RNEncryptor encryptData:data
+                                        withSettings:kRNCryptorAES256Settings
+                                            password:@"sndr"
+                                               error:&error];
+    if (error)
+    {
+        NSLog(@"Decrypt error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    NSString * encryptedString = [encryptedData base64EncodedStringWithOptions:0];
+    
+    return encryptedString;
+}
+
+- (NSString*)RNDecrypt:(NSString*)dataString
+{
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:dataString options:0];
+
+    NSError *error;
+    NSData *decryptedData = [RNDecryptor decryptData:data
+                                        withPassword:@"sndr"
+                                               error:&error];
+    if (error)
+    {
+        NSLog(@"Decrypt error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    NSString * decryptedString = [[NSString alloc] initWithData:decryptedData
+                                                       encoding:NSUTF8StringEncoding];
+    return decryptedString;
+}
+
 
 #pragma mark -
 #pragma mark Button Methods
 
 - (IBAction)loaddata:(id)sender
 {
+    [self Delete];
     [self getData];
 }
 
 - (IBAction)deleteAll:(id)sender
 {
+
     [self Delete];
+    // Save Record
+    [self saveContext];
 }
 
 

@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RNCryptor iOS.h"
 
 @interface sndrEncrypt : NSObject
+
+- (NSString*)RNEncrypt:(NSString *)dataString;
+- (NSString*)RNDecrypt:(NSString*)dataString;
 
 @end

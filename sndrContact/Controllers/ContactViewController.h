@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "sndrEncrypt.h"
 
 @interface ContactViewController :UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,5 +19,8 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (strong, nonatomic) NSManagedObject *record;
+
+- (NSString*)RNEncrypt:(NSString *)dataString;
+- (NSString*)RNDecrypt:(NSString*)dataString;
 
 @end

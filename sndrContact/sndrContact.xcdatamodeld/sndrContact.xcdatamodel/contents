@@ -5,6 +5,7 @@
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="company_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="county" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="done" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="jpg" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,6 +17,6 @@
         <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="Entity" positionX="-63" positionY="-18" width="128" height="255"/>
     </elements>
 </model>
