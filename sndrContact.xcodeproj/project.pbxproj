@@ -22,6 +22,12 @@
 		7F79174D2143FF38009D6A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917432143FF38009D6A4A /* main.m */; };
 		7F8634CB214420FD00F01153 /* sndrContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CA214420FD00F01153 /* sndrContactTests.m */; };
 		7F8634D02144321D00F01153 /* empty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CF2144321D00F01153 /* empty.cpp */; };
+		7F91E37E2149661800879312 /* RNCryptorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91E37A2149661600879312 /* RNCryptorEngine.m */; };
+		7F91E37F2149661800879312 /* RNDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91E37B2149661600879312 /* RNDecryptor.m */; };
+		7F91E3802149661800879312 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91E37C2149661700879312 /* RNEncryptor.m */; };
+		7F91E3812149661800879312 /* RNCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91E37D2149661800879312 /* RNCryptor.m */; };
+		7F91E384214966CF00879312 /* RNCryptorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F91E3822149668500879312 /* RNCryptorEngine.h */; };
+		7F91E3862149670A00879312 /* RNCryptor+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F91E3852149670A00879312 /* RNCryptor+Private.h */; };
 		7F98333221489E4500826002 /* sndrEncrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F98333021489E4500826002 /* sndrEncrypt.h */; };
 		7F98333321489E4500826002 /* sndrEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98333121489E4500826002 /* sndrEncrypt.m */; };
 		7FBFB16821473BCE008BF12A /* RNCryptor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBFB16621473BC9008BF12A /* RNCryptor.framework */; };
@@ -83,6 +89,12 @@
 		7F7917432143FF38009D6A4A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7F8634CA214420FD00F01153 /* sndrContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sndrContactTests.m; sourceTree = "<group>"; };
 		7F8634CF2144321D00F01153 /* empty.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = empty.cpp; sourceTree = "<group>"; };
+		7F91E37A2149661600879312 /* RNCryptorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptorEngine.m; sourceTree = "<group>"; };
+		7F91E37B2149661600879312 /* RNDecryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDecryptor.m; sourceTree = "<group>"; };
+		7F91E37C2149661700879312 /* RNEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEncryptor.m; sourceTree = "<group>"; };
+		7F91E37D2149661800879312 /* RNCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptor.m; sourceTree = "<group>"; };
+		7F91E3822149668500879312 /* RNCryptorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptorEngine.h; sourceTree = "<group>"; };
+		7F91E3852149670A00879312 /* RNCryptor+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNCryptor+Private.h"; sourceTree = "<group>"; };
 		7F98333021489E4500826002 /* sndrEncrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sndrEncrypt.h; sourceTree = "<group>"; };
 		7F98333121489E4500826002 /* sndrEncrypt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sndrEncrypt.m; sourceTree = "<group>"; };
 		7FBFB16621473BC9008BF12A /* RNCryptor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RNCryptor.framework; sourceTree = "<group>"; };
@@ -127,6 +139,8 @@
 		49D047551B2B08F6006F4AC1 = {
 			isa = PBXGroup;
 			children = (
+				7F91E3852149670A00879312 /* RNCryptor+Private.h */,
+				7F91E3822149668500879312 /* RNCryptorEngine.h */,
 				7F4CFEA3214869730067FD28 /* RNCryptor iOS.h */,
 				7F4CFEA4214869730067FD28 /* RNCryptor.h */,
 				7F4CFEA2214869730067FD28 /* RNDecryptor.h */,
@@ -192,6 +206,10 @@
 		7F7917442143FF38009D6A4A /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				7F91E37D2149661800879312 /* RNCryptor.m */,
+				7F91E37A2149661600879312 /* RNCryptorEngine.m */,
+				7F91E37B2149661600879312 /* RNDecryptor.m */,
+				7F91E37C2149661700879312 /* RNEncryptor.m */,
 				7FFD65FD2146CC440064BF7D /* button-done-normal.png */,
 				7FFD65FB2146CC430064BF7D /* button-done-normal@2x.png */,
 				7FFD65FC2146CC430064BF7D /* button-done-selected.png */,
@@ -217,6 +235,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F91E3862149670A00879312 /* RNCryptor+Private.h in Headers */,
+				7F91E384214966CF00879312 /* RNCryptorEngine.h in Headers */,
 				7F4CFEA6214869740067FD28 /* RNDecryptor.h in Headers */,
 				7F4CFEA7214869740067FD28 /* RNCryptor iOS.h in Headers */,
 				7F98333221489E4500826002 /* sndrEncrypt.h in Headers */,
@@ -389,9 +409,13 @@
 				7F7917462143FF38009D6A4A /* AppDelegate.m in Sources */,
 				7F7917492143FF38009D6A4A /* ContactViewController.m in Sources */,
 				7FFE0692214688D00082ABFC /* sndrContact.xcdatamodeld in Sources */,
+				7F91E37E2149661800879312 /* RNCryptorEngine.m in Sources */,
+				7F91E37F2149661800879312 /* RNDecryptor.m in Sources */,
+				7F91E3812149661800879312 /* RNCryptor.m in Sources */,
 				7F79174D2143FF38009D6A4A /* main.m in Sources */,
 				7F98333321489E4500826002 /* sndrEncrypt.m in Sources */,
 				7F79174A2143FF38009D6A4A /* ContactDetailViewController.m in Sources */,
+				7F91E3802149661800879312 /* RNEncryptor.m in Sources */,
 				7FFE068D2145E48F0082ABFC /* ContactCell.m in Sources */,
 				7F8634D02144321D00F01153 /* empty.cpp in Sources */,
 			);
