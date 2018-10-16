@@ -10,7 +10,7 @@
 #import "RNCryptor iOS.h"
 #import "RNDecryptor.h"
 
-@interface ContactDetailViewController () <NSURLSessionDelegate, NSURLSessionTaskDelegate>
+@interface ContactDetailViewController () <NSURLSessionDelegate, NSURLSessionTaskDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) NSURLSession *urlSession;
 
@@ -25,10 +25,19 @@
 
 @implementation ContactDetailViewController
 
+UIGestureRecognizer *tapper;
+BOOL moved = NO;
+
 - (IBAction)Back:(id)sender
 {
     //[self dismissController: nil];
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
 
 - (void)viewDidLoad
 {
@@ -68,6 +77,12 @@
             //[self.jpg setImage:@"button-done-normal.png"];
         }
     }
+    
+    tapper = [[UITapGestureRecognizer alloc]
+              initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapper];
+    
     [self.activityIndicator stopAnimating];
 }
 
@@ -105,7 +120,7 @@
             }
             
             // Show Alert View
-            [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your contacgs could not be saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your contacts could not be saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
         
     } else {
@@ -113,6 +128,71 @@
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your contact needs a name." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
 }
+
+//- (void)keyboardDidShow: (NSNotification *) notif
+//{
+//    //Keyboard becomes visible
+//    ContactScrollView.frame = CGRectMake(scrollView.frame.origin.x,
+//                                  scrollView.frame.origin.y - 220,
+//                                  scrollView.frame.size.width,
+//                                  scrollView.frame.size.height);   //move up
+//}
+//
+//- (void)keyboardDidHide: (NSNotification *) notif
+//{
+//    //keyboard will hide
+//    scrollView.frame = CGRectMake(scrollView.frame.origin.x,
+//                                  scrollView.frame.origin.y + 220,
+//                                  scrollView.frame.size.width,
+//                                  scrollView.frame.size.height);   //move down
+//}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if(!moved)
+    {
+        [self animateViewToPosition:self.view directionUP:YES];
+        moved = YES;
+    }
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    if(moved)
+    {
+        [self animateViewToPosition:self.view directionUP:NO];
+    }
+    moved = NO;
+    return YES;
+}
+
+
+-(void)animateViewToPosition:(UIView *)viewToMove directionUP:(BOOL)up
+{
+    
+    const int movementDistance = -60; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? movementDistance : -movementDistance);
+    [UIView beginAnimations: @"animateTextField" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    viewToMove.frame = CGRectOffset(viewToMove.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
+//-(bool)textFieldShouldReturn:textField
+//{
+//    [textField setReturnKeyType:UIReturnKeyDone];
+//    [textField resignFirstResponder];
+//    return true;
+//}
 
 - (NSString*)RNEncrypt:(NSString *)dataString
 {
@@ -168,4 +248,11 @@
 {
     self.first_name.userInteractionEnabled = YES;
 }
+
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
+
 @end
+

@@ -35,6 +35,8 @@
     NSArray *tableData;
 }
 
+//UIGestureRecognizer *tapper;
+
 #pragma mark - TableView
 
 - (void)viewDidLoad
@@ -115,6 +117,12 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     }
+    
+    
+//    tapper = [[UITapGestureRecognizer alloc]
+//              initWithTarget:self action:@selector(handleSingleTap:)];
+//    tapper.cancelsTouchesInView = NO;
+//    [self.view addGestureRecognizer:tapper];
 
 }
 
@@ -541,6 +549,10 @@
     [self saveContext];
 }
 
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
 
 
 @end

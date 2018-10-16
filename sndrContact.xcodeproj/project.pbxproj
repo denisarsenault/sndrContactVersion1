@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F4CFEA6214869740067FD28 /* RNDecryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F4CFEA2214869730067FD28 /* RNDecryptor.h */; };
-		7F4CFEA7214869740067FD28 /* RNCryptor iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F4CFEA3214869730067FD28 /* RNCryptor iOS.h */; };
-		7F4CFEA8214869740067FD28 /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F4CFEA4214869730067FD28 /* RNCryptor.h */; };
-		7F4CFEA9214869740067FD28 /* RNEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F4CFEA5214869730067FD28 /* RNEncryptor.h */; };
+		7F784FFE217139ED00DC3AFD /* RNEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F784FFD217139ED00DC3AFD /* RNEncryptor.h */; };
 		7F7917332143FF2F009D6A4A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917312143FF2F009D6A4A /* Info.plist */; };
 		7F7917462143FF38009D6A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917372143FF38009D6A4A /* AppDelegate.m */; };
 		7F7917472143FF38009D6A4A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917382143FF38009D6A4A /* LaunchScreen.xib */; };
@@ -20,23 +17,27 @@
 		7F79174B2143FF38009D6A4A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917412143FF38009D6A4A /* Images.xcassets */; };
 		7F79174C2143FF38009D6A4A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917422143FF38009D6A4A /* Info.plist */; };
 		7F79174D2143FF38009D6A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917432143FF38009D6A4A /* main.m */; };
+		7F7BA17D21742C2E00495E3F /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7BA17B21742C2E00495E3F /* ContactCell.m */; };
+		7F7BA17E21742C2E00495E3F /* ContactCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7BA17C21742C2E00495E3F /* ContactCell.h */; };
 		7F8634CB214420FD00F01153 /* sndrContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CA214420FD00F01153 /* sndrContactTests.m */; };
 		7F8634D02144321D00F01153 /* empty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F8634CF2144321D00F01153 /* empty.cpp */; };
 		7F91E37E2149661800879312 /* RNCryptorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91E37A2149661600879312 /* RNCryptorEngine.m */; };
 		7F91E37F2149661800879312 /* RNDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91E37B2149661600879312 /* RNDecryptor.m */; };
 		7F91E3802149661800879312 /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91E37C2149661700879312 /* RNEncryptor.m */; };
 		7F91E3812149661800879312 /* RNCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F91E37D2149661800879312 /* RNCryptor.m */; };
-		7F91E384214966CF00879312 /* RNCryptorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F91E3822149668500879312 /* RNCryptorEngine.h */; };
-		7F91E3862149670A00879312 /* RNCryptor+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F91E3852149670A00879312 /* RNCryptor+Private.h */; };
 		7F98333221489E4500826002 /* sndrEncrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F98333021489E4500826002 /* sndrEncrypt.h */; };
 		7F98333321489E4500826002 /* sndrEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98333121489E4500826002 /* sndrEncrypt.m */; };
 		7FBFB16821473BCE008BF12A /* RNCryptor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBFB16621473BC9008BF12A /* RNCryptor.framework */; };
 		7FBFB16921473BCE008BF12A /* RNCryptor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBFB16621473BC9008BF12A /* RNCryptor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FCED381217102A900CAB476 /* RNDecryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FCED37D217102A700CAB476 /* RNDecryptor.h */; };
+		7FCED382217102A900CAB476 /* RNCryptor+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FCED37E217102A700CAB476 /* RNCryptor+Private.h */; };
+		7FCED383217102A900CAB476 /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FCED37F217102A800CAB476 /* RNCryptor.h */; };
+		7FCED384217102A900CAB476 /* RNCryptorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FCED380217102A800CAB476 /* RNCryptorEngine.h */; };
+		7FCED386217102F600CAB476 /* RNCryptor iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FCED385217102F500CAB476 /* RNCryptor iOS.h */; };
 		7FFD65FF2146CC440064BF7D /* button-done-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FB2146CC430064BF7D /* button-done-normal@2x.png */; };
 		7FFD66002146CC440064BF7D /* button-done-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FC2146CC430064BF7D /* button-done-selected.png */; };
 		7FFD66012146CC440064BF7D /* button-done-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FD2146CC440064BF7D /* button-done-normal.png */; };
 		7FFD66022146CC440064BF7D /* button-done-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFD65FE2146CC440064BF7D /* button-done-selected@2x.png */; };
-		7FFE068D2145E48F0082ABFC /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE068C2145E48E0082ABFC /* ContactCell.m */; };
 		7FFE0692214688D00082ABFC /* sndrContact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE0690214688D00082ABFC /* sndrContact.xcdatamodeld */; };
 		BDE5016E049437FE71624B49 /* libPods-SSL pinning iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0255776D3810883CCD04ADA0 /* libPods-SSL pinning iOS.a */; };
 /* End PBXBuildFile section */
@@ -71,10 +72,7 @@
 		49D0475E1B2B08F6006F4AC1 /* sndrContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sndrContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D047771B2B08F6006F4AC1 /* sndrContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sndrContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		546D70503AB8A72D59672842 /* Pods-SSL pinning iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSL pinning iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSL pinning iOS/Pods-SSL pinning iOS.release.xcconfig"; sourceTree = "<group>"; };
-		7F4CFEA2214869730067FD28 /* RNDecryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RNDecryptor.h; path = RNCryptor.framework/Headers/RNDecryptor.h; sourceTree = "<group>"; };
-		7F4CFEA3214869730067FD28 /* RNCryptor iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RNCryptor iOS.h"; path = "RNCryptor.framework/Headers/RNCryptor iOS.h"; sourceTree = "<group>"; };
-		7F4CFEA4214869730067FD28 /* RNCryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RNCryptor.h; path = RNCryptor.framework/Headers/RNCryptor.h; sourceTree = "<group>"; };
-		7F4CFEA5214869730067FD28 /* RNEncryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RNEncryptor.h; path = RNCryptor.framework/Headers/RNEncryptor.h; sourceTree = "<group>"; };
+		7F784FFD217139ED00DC3AFD /* RNEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEncryptor.h; sourceTree = "<group>"; };
 		7F7917312143FF2F009D6A4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F7917362143FF38009D6A4A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7F7917372143FF38009D6A4A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,23 +85,26 @@
 		7F7917412143FF38009D6A4A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7F7917422143FF38009D6A4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F7917432143FF38009D6A4A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7F7BA17B21742C2E00495E3F /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
+		7F7BA17C21742C2E00495E3F /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
 		7F8634CA214420FD00F01153 /* sndrContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sndrContactTests.m; sourceTree = "<group>"; };
 		7F8634CF2144321D00F01153 /* empty.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = empty.cpp; sourceTree = "<group>"; };
 		7F91E37A2149661600879312 /* RNCryptorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptorEngine.m; sourceTree = "<group>"; };
 		7F91E37B2149661600879312 /* RNDecryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDecryptor.m; sourceTree = "<group>"; };
 		7F91E37C2149661700879312 /* RNEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEncryptor.m; sourceTree = "<group>"; };
 		7F91E37D2149661800879312 /* RNCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCryptor.m; sourceTree = "<group>"; };
-		7F91E3822149668500879312 /* RNCryptorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptorEngine.h; sourceTree = "<group>"; };
-		7F91E3852149670A00879312 /* RNCryptor+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNCryptor+Private.h"; sourceTree = "<group>"; };
 		7F98333021489E4500826002 /* sndrEncrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sndrEncrypt.h; sourceTree = "<group>"; };
 		7F98333121489E4500826002 /* sndrEncrypt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sndrEncrypt.m; sourceTree = "<group>"; };
 		7FBFB16621473BC9008BF12A /* RNCryptor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RNCryptor.framework; sourceTree = "<group>"; };
+		7FCED37D217102A700CAB476 /* RNDecryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNDecryptor.h; sourceTree = "<group>"; };
+		7FCED37E217102A700CAB476 /* RNCryptor+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNCryptor+Private.h"; sourceTree = "<group>"; };
+		7FCED37F217102A800CAB476 /* RNCryptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
+		7FCED380217102A800CAB476 /* RNCryptorEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCryptorEngine.h; sourceTree = "<group>"; };
+		7FCED385217102F500CAB476 /* RNCryptor iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RNCryptor iOS.h"; path = "sndrContact/RNCryptor iOS.h"; sourceTree = "<group>"; };
 		7FFD65FB2146CC430064BF7D /* button-done-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-normal@2x.png"; sourceTree = "<group>"; };
 		7FFD65FC2146CC430064BF7D /* button-done-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-selected.png"; sourceTree = "<group>"; };
 		7FFD65FD2146CC440064BF7D /* button-done-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-normal.png"; sourceTree = "<group>"; };
 		7FFD65FE2146CC440064BF7D /* button-done-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-selected@2x.png"; sourceTree = "<group>"; };
-		7FFE068C2145E48E0082ABFC /* ContactCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = /Users/denisarsenault/Desktop/sndrContactVersion1/sndrContact/Controllers/ContactCell.m; sourceTree = "<absolute>"; };
-		7FFE068E2145E4910082ABFC /* ContactCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = /Users/denisarsenault/Desktop/sndrContactVersion1/sndrContact/Controllers/ContactCell.h; sourceTree = "<absolute>"; };
 		7FFE0691214688D00082ABFC /* sndrContact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sndrContact.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,12 +140,7 @@
 		49D047551B2B08F6006F4AC1 = {
 			isa = PBXGroup;
 			children = (
-				7F91E3852149670A00879312 /* RNCryptor+Private.h */,
-				7F91E3822149668500879312 /* RNCryptorEngine.h */,
-				7F4CFEA3214869730067FD28 /* RNCryptor iOS.h */,
-				7F4CFEA4214869730067FD28 /* RNCryptor.h */,
-				7F4CFEA2214869730067FD28 /* RNDecryptor.h */,
-				7F4CFEA5214869730067FD28 /* RNEncryptor.h */,
+				7FCED385217102F500CAB476 /* RNCryptor iOS.h */,
 				7F7917352143FF38009D6A4A /* sndrContact */,
 				7F7917302143FF2F009D6A4A /* sndrContactTests */,
 				49D0475F1B2B08F6006F4AC1 /* Products */,
@@ -174,6 +170,11 @@
 		7F7917352143FF38009D6A4A /* sndrContact */ = {
 			isa = PBXGroup;
 			children = (
+				7F784FFD217139ED00DC3AFD /* RNEncryptor.h */,
+				7FCED37F217102A800CAB476 /* RNCryptor.h */,
+				7FCED37E217102A700CAB476 /* RNCryptor+Private.h */,
+				7FCED380217102A800CAB476 /* RNCryptorEngine.h */,
+				7FCED37D217102A700CAB476 /* RNDecryptor.h */,
 				7F7917362143FF38009D6A4A /* AppDelegate.h */,
 				7F7917372143FF38009D6A4A /* AppDelegate.m */,
 				7F7917382143FF38009D6A4A /* LaunchScreen.xib */,
@@ -193,8 +194,8 @@
 		7F79173C2143FF38009D6A4A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7FFE068E2145E4910082ABFC /* ContactCell.h */,
-				7FFE068C2145E48E0082ABFC /* ContactCell.m */,
+				7F7BA17C21742C2E00495E3F /* ContactCell.h */,
+				7F7BA17B21742C2E00495E3F /* ContactCell.m */,
 				7F79173D2143FF38009D6A4A /* ContactViewController.h */,
 				7F79173E2143FF38009D6A4A /* ContactViewController.m */,
 				7F79173F2143FF38009D6A4A /* ContactDetailViewController.h */,
@@ -235,13 +236,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F91E3862149670A00879312 /* RNCryptor+Private.h in Headers */,
-				7F91E384214966CF00879312 /* RNCryptorEngine.h in Headers */,
-				7F4CFEA6214869740067FD28 /* RNDecryptor.h in Headers */,
-				7F4CFEA7214869740067FD28 /* RNCryptor iOS.h in Headers */,
+				7FCED386217102F600CAB476 /* RNCryptor iOS.h in Headers */,
+				7FCED381217102A900CAB476 /* RNDecryptor.h in Headers */,
+				7FCED382217102A900CAB476 /* RNCryptor+Private.h in Headers */,
+				7FCED383217102A900CAB476 /* RNCryptor.h in Headers */,
+				7FCED384217102A900CAB476 /* RNCryptorEngine.h in Headers */,
 				7F98333221489E4500826002 /* sndrEncrypt.h in Headers */,
-				7F4CFEA8214869740067FD28 /* RNCryptor.h in Headers */,
-				7F4CFEA9214869740067FD28 /* RNEncryptor.h in Headers */,
+				7F784FFE217139ED00DC3AFD /* RNEncryptor.h in Headers */,
+				7F7BA17E21742C2E00495E3F /* ContactCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,11 +414,11 @@
 				7F91E37E2149661800879312 /* RNCryptorEngine.m in Sources */,
 				7F91E37F2149661800879312 /* RNDecryptor.m in Sources */,
 				7F91E3812149661800879312 /* RNCryptor.m in Sources */,
+				7F7BA17D21742C2E00495E3F /* ContactCell.m in Sources */,
 				7F79174D2143FF38009D6A4A /* main.m in Sources */,
 				7F98333321489E4500826002 /* sndrEncrypt.m in Sources */,
 				7F79174A2143FF38009D6A4A /* ContactDetailViewController.m in Sources */,
 				7F91E3802149661800879312 /* RNEncryptor.m in Sources */,
-				7FFE068D2145E48F0082ABFC /* ContactCell.m in Sources */,
 				7F8634D02144321D00F01153 /* empty.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
