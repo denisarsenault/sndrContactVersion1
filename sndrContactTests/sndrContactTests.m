@@ -3,7 +3,7 @@
 //  sndrContactTests
 //
 //  Created by Denis Arsenault on 9/8/18.
-//  Copyright (c) 2018 Sndr LLC All rights reserved.
+//  Copyright (c) 2018 Denis Arsenault All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
