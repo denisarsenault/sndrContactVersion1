@@ -9,6 +9,7 @@
 #import "ContactDetailViewController.h"
 #import "RNCryptor iOS.h"
 #import "RNDecryptor.h"
+#import "UIView+FormScroll.h"
 
 @interface ContactDetailViewController () <NSURLSessionDelegate, NSURLSessionTaskDelegate, UITextFieldDelegate>
 
@@ -33,16 +34,57 @@ BOOL moved = NO;
     //[self dismissController: nil];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.view endEditing:YES];
+    [textField resignFirstResponder];
+    return YES;
 }
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.view scrollToView:textField];
+}
+
+-(void) textFieldDidEndEditing:(UITextField *)textField
+{
+    [self.view scrollToY:0];
+    [textField resignFirstResponder];
+}
+
+
+//- (bool)textFieldShouldReturn:textField
+//{
+//
+//    [self.view endEditing:YES];
+//
+//    return true;
+//
+//}
+
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    [self.view endEditing:YES];
+//}
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.activityIndicator startAnimating];
+    
+    self.first_name.delegate = self;
+    self.last_name.delegate = self;
+    self.company_name.delegate = self;
+    self.address.delegate = self;
+    self.city.delegate = self;
+    self.state.delegate = self;
+    self.county.delegate = self;
+    self.zip.delegate = self;
+    self.phone1.delegate = self;
+    self.phone2.delegate = self;
+    self.email.delegate = self;
+    self.web.delegate = self;
+    
     
     if (self.record)
     {
@@ -109,12 +151,15 @@ BOOL moved = NO;
         // Save Record
         NSError *error = nil;
         
-        if ([self.managedObjectContext save:&error]) {
+        if ([self.managedObjectContext save:&error])
+        {
             // Pop View Controller
             [self.navigationController popViewControllerAnimated:YES];
             
-        } else {
-            if (error) {
+        } else
+        {
+            if (error)
+            {
                 NSLog(@"Unable to save record.");
                 NSLog(@"%@, %@", error, error.localizedDescription);
             }
@@ -147,30 +192,30 @@ BOOL moved = NO;
 //                                  scrollView.frame.size.height);   //move down
 //}
 
--(void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    if(!moved)
-    {
-        [self animateViewToPosition:self.view directionUP:YES];
-        moved = YES;
-    }
-}
-
--(void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    if(moved)
-    {
-        [self animateViewToPosition:self.view directionUP:NO];
-    }
-    moved = NO;
-    return YES;
-}
+//-(void)textFieldDidBeginEditing:(UITextField *)textField
+//{
+//    if(!moved)
+//    {
+//        [self animateViewToPosition:self.view directionUP:YES];
+//        moved = YES;
+//    }
+//}
+//
+//-(void)textFieldDidEndEditing:(UITextField *)textField
+//{
+//    [textField resignFirstResponder];
+//}
+//
+//-(BOOL)textFieldShouldReturn:(UITextField *)textField
+//{
+//    [textField resignFirstResponder];
+//    if(moved)
+//    {
+//        [self animateViewToPosition:self.view directionUP:NO];
+//    }
+//    moved = NO;
+//    return YES;
+//}
 
 
 -(void)animateViewToPosition:(UIView *)viewToMove directionUP:(BOOL)up

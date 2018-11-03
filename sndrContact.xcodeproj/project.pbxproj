@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F37DDEB218CCCF400093298 /* UIView+FormScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F37DDE9218CCCF400093298 /* UIView+FormScroll.h */; };
+		7F37DDEC218CCCF400093298 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F37DDEA218CCCF400093298 /* UIView+FormScroll.m */; };
 		7F784FFE217139ED00DC3AFD /* RNEncryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F784FFD217139ED00DC3AFD /* RNEncryptor.h */; };
 		7F7917332143FF2F009D6A4A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917312143FF2F009D6A4A /* Info.plist */; };
 		7F7917462143FF38009D6A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917372143FF38009D6A4A /* AppDelegate.m */; };
@@ -15,7 +17,6 @@
 		7F7917492143FF38009D6A4A /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F79173E2143FF38009D6A4A /* ContactViewController.m */; };
 		7F79174A2143FF38009D6A4A /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917402143FF38009D6A4A /* ContactDetailViewController.m */; };
 		7F79174B2143FF38009D6A4A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917412143FF38009D6A4A /* Images.xcassets */; };
-		7F79174C2143FF38009D6A4A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F7917422143FF38009D6A4A /* Info.plist */; };
 		7F79174D2143FF38009D6A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7917432143FF38009D6A4A /* main.m */; };
 		7F7BA17D21742C2E00495E3F /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7BA17B21742C2E00495E3F /* ContactCell.m */; };
 		7F7BA17E21742C2E00495E3F /* ContactCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7BA17C21742C2E00495E3F /* ContactCell.h */; };
@@ -72,6 +73,8 @@
 		49D0475E1B2B08F6006F4AC1 /* sndrContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sndrContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D047771B2B08F6006F4AC1 /* sndrContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sndrContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		546D70503AB8A72D59672842 /* Pods-SSL pinning iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSL pinning iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSL pinning iOS/Pods-SSL pinning iOS.release.xcconfig"; sourceTree = "<group>"; };
+		7F37DDE9218CCCF400093298 /* UIView+FormScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
+		7F37DDEA218CCCF400093298 /* UIView+FormScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormScroll.m"; sourceTree = "<group>"; };
 		7F784FFD217139ED00DC3AFD /* RNEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEncryptor.h; sourceTree = "<group>"; };
 		7F7917312143FF2F009D6A4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F7917362143FF38009D6A4A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				7F79173E2143FF38009D6A4A /* ContactViewController.m */,
 				7F79173F2143FF38009D6A4A /* ContactDetailViewController.h */,
 				7F7917402143FF38009D6A4A /* ContactDetailViewController.m */,
+				7F37DDE9218CCCF400093298 /* UIView+FormScroll.h */,
+				7F37DDEA218CCCF400093298 /* UIView+FormScroll.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F37DDEB218CCCF400093298 /* UIView+FormScroll.h in Headers */,
 				7FCED386217102F600CAB476 /* RNCryptor iOS.h in Headers */,
 				7FCED381217102A900CAB476 /* RNDecryptor.h in Headers */,
 				7FCED382217102A900CAB476 /* RNCryptor+Private.h in Headers */,
@@ -296,7 +302,7 @@
 		49D047561B2B08F6006F4AC1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = sndr;
 				TargetAttributes = {
 					49D0475D1B2B08F6006F4AC1 = {
@@ -335,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFD66002146CC440064BF7D /* button-done-selected.png in Resources */,
-				7F79174C2143FF38009D6A4A /* Info.plist in Resources */,
 				7FFD66012146CC440064BF7D /* button-done-normal.png in Resources */,
 				7F79174B2143FF38009D6A4A /* Images.xcassets in Resources */,
 				7F7917472143FF38009D6A4A /* LaunchScreen.xib in Resources */,
@@ -408,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F37DDEC218CCCF400093298 /* UIView+FormScroll.m in Sources */,
 				7F7917462143FF38009D6A4A /* AppDelegate.m in Sources */,
 				7F7917492143FF38009D6A4A /* ContactViewController.m in Sources */,
 				7FFE0692214688D00082ABFC /* sndrContact.xcdatamodeld in Sources */,
