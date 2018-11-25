@@ -1,5 +1,5 @@
 # sndrContact
 
-sndrContact
+Sample code with embedded encryption for coredata
 
-www.sndr.com
+www.denisarsenault.com
