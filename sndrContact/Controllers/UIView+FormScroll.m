@@ -3,7 +3,7 @@
 //  sndrContact
 //
 //  Created by Denis Arsenault on 11/2/18.
-//  Copyright © 2018 sndr. All rights reserved.
+//  Copyright © 2018 mybrightzone. All rights reserved.
 //
 
 #import "UIView+FormScroll.h"

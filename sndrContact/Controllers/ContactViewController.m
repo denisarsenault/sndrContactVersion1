@@ -380,7 +380,7 @@
     
     bool success = NO;
     NSError *error;
-    NSString *url_string = [NSString stringWithFormat: @"https://sndr.com/wp-content/uploads/2018/09/testDataJson.txt"];
+    NSString *url_string = [NSString stringWithFormat: @"https://mybrightzone.com/wp-content/uploads/2018/09/testDataJson.txt"];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
     NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
