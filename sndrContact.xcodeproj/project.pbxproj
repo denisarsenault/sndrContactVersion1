@@ -303,7 +303,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = sndr;
+				ORGANIZATIONNAME = MyBrightzone;
 				TargetAttributes = {
 					49D0475D1B2B08F6006F4AC1 = {
 						CreatedOnToolsVersion = 6.3.2;
